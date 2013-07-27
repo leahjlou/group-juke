@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>GroupJuke</title>
+    
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.min.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
+    
+  </head>
+  <body>
+    
+    <div id="main" class="container">
+
+      <header class="jumbotron subhead" id="overview">
+        <h1>GroupJuke</h1>
+        <p class="lead">Democratize your playlist.</p>
+
+        <div class="panelcollapsed">
+          <h2>How-To</h2>
+          <div class="panelcontent">
+            <p class="first">Use this site for playing music in room full of people. (A party, for example.) </p>
+            <p>As the music plays, everyone can help decide which track will play next by <strong>voting</strong> for the song they want to hear next.</p>
+            <p>Vote by texting in two things:
+              <ol>
+                <li>The <strong>Instance Code</strong> (the two-character code displayed below).</li>
+                <li>The <strong>Song Number</strong> (1, 2, 3, or 4).</li>
+              </ol>
+            </p>
+            <p>For example, text "<span class="appcode">4A</span>-1" to vote for song 1.</p>
+            <p>Vote as many times as you want!</p>
+            <p>When the current song ends, the song with the most votes will automatically play next. Then a new random crop of songs will appear to vote on.</p>
+            <p>Click ▶ on the music player to get started with a randomly chosen first song.</p>
+            <p>What plays next is up to the crowd!</p>
+          </div>
+        </div>
+
+      </header>
+
+      <div class="page-header">
+          <p class="lead">Text your vote here:</p>
+          <ul>
+            <li><small class="phone-number">+1 714-294-2347</small></li>
+          </ul>
+
+          <p class="lead">Instance Code:</p>
+          <ul>
+            <li><small class="appcode phone-number"></small></li>
+          </ul>
+
+          <p class="lead">Example:</p>
+          <ul>
+            <li><small class="phone-number">Text "<span class="appcode"></span>-1" to vote for song choice 1</small></li>
+          </ul>
+
+      </div>
+
+      <div class="music-player">
+        <p><small id="currplaying">Currently Playing: </small><span id="currSongTitle"></span></p>
+        <audio id="player" src="" controls></audio>
+      </div>
+      
+      <div class="row">    
+
+        <div class="span8">
+          <p class="lead">Next Song Choices:</p>
+          <ul id="song_choices">
+            <li id="song1obj"><span class="num">1</span> <span id="song1title" class="songTitle">Song 1</span>
+              <div>Votes: <span id="votes" class="song1votes">0</span></div></li>
+            <li id="song2obj"><span class="num">2</span> <span id="song2title" class="songTitle">Song 2</span>
+              <div>Votes: <span id="votes" class="song2votes">0</span></div></li>
+            <li id="song3obj"><span class="num">3</span> <span id="song3title" class="songTitle">Song 3</span>
+              <div>Votes: <span id="votes" class="song3votes">0</span></div></li>
+            <li id="song4obj"><span class="num">4</span> <span id="song4title" class="songTitle">Song 4</span>
+              <div>Votes: <span id="votes" class="song4votes">0</span></div></li>
+          </ul>
+          <p><small>Powered by <a href="http://pusher.com">Pusher</a> &amp; <a href="http://twilio.com">Twilio</a>. <em>Use me in a modern browser that supports HTML5 audio!</em></small></p>
+        </div>
+
+        <div class="span3">
+          <p class="lead">Live Vote Feed:</p>
+          <ul id="sms_messages"></ul>
+        </div>
+      
+      </div>
+
+
+
+    </div>
+    
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="http://js.pusher.com/1.12/pusher.min.js"></script>
+    <script>
+      var PUSHER_CONFIG = {
+        APP_KEY: '<%= @app_key %>'
+      };
+    </script>
+    <script src="js/app.js"></script>
+    <script src="js/test_helpers.js"></script>
+    <script type="text/javascript" src="js/utils.js"></script>
+
+
+  </body>
+</html>

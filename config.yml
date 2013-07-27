@@ -1,0 +1,6 @@
+pusher:
+  app_id: {pusher app id}
+  app_key: {pusher app key}
+  app_secret: {pusher app secret}
+twilio:
+  account_sid: {Twilio acct sid}
